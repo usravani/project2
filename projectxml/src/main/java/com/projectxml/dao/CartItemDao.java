@@ -8,7 +8,7 @@ import com.projectxml.model.Item;
 
 public interface CartItemDao {
 	public void addItems(CartItem cartitem);
-	
-	
+	List<CartItem>ViewCartProducts(int cartId);
+	public  void deleteItem(CartItem cartitem);
 
 }

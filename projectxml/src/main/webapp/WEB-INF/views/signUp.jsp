@@ -15,7 +15,7 @@
 <div class="form-container">
      <center>
     
-<form:form action ="reg" commandName="customerObj" method="POST">
+<form:form commandName="customer" >
 <div class="row">
             <div class="form-group col-md-12">
                 <label class="col-md-5 control-lable" for="uname"></label>
@@ -41,7 +41,7 @@ EmailId:<form:input path="emailId"></form:input><form:errors path="emailId" styl
                 </div>
             </div> 
           
-<input type="submit" value="register"/>
+<input name ="_eventId_submit" type="submit" value="register"/>
 </form:form>
 </center>
 </div>

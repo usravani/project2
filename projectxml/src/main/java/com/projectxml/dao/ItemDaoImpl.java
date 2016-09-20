@@ -47,6 +47,7 @@ public class ItemDaoImpl implements ItemDao{
 		Transaction transaction=session.beginTransaction();
 		Item item=session.get(Item.class, new Integer(id));
 		session.delete(item);
+		System.out.println("item deleted");
 		transaction.commit();
 		System.out.println("deleted the item"+item.getItemName());	
 		

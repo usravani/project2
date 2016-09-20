@@ -30,10 +30,8 @@ http://www.springframework.org/schema/tx/spring-tx.xsd ">
 </list>
 </property>
 </bean>
-<context:component-scan base-package="com.projectxml.controller"/>
-<context:component-scan base-package="com.projectxml.model"/>
-<context:component-scan base-package="com.projectxml.dao"/>
-<context:component-scan base-package="com.projectxml.service"/>
+<context:component-scan base-package="com.projectxml.*"/>
+
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 <property name="driverClassName" value="org.h2.Driver"/>
 <property name="url" value="jdbc:h2:tcp://localhost/~/niit"/>

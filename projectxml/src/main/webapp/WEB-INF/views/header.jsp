@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -54,7 +55,7 @@
  </div>
 <div class="collapse navbar-collapse" id="navbar">
 <ul class="nav navbar-nav">
-      <li><a href="home">Home</a></li>
+      <li><a href="${flowExecutionUrl}&_eventId_home">Home</a></li>
        <li><a href="About us">About us</a></li>
 	  <li><a href="Contact Us">Contact Us</a></li>
 	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="Brands">Fastrack <span class="caret"></span></a>

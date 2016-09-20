@@ -2,6 +2,9 @@ package com.projectxml.dao;
 
 
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,8 +25,32 @@ SessionFactory Sessionfactory;
 		session.save(cartitem);
 		transaction.commit();
 	}
+
+	@Override
+	public List<CartItem> ViewCartProducts(int cartId) {
+		Session session= Sessionfactory.getCurrentSession();
+		Transaction transaction=session.beginTransaction();
+		Query query=session.createQuery("from CartItem where cartId="+cartId);
+		List<CartItem>list=query.list();
+		return list;
+	}
+
+	@Override
+	public void deleteItem(CartItem cartitem) {
+		Session session=Sessionfactory.getCurrentSession();
+		Transaction transaction =session.beginTransaction();
+		session.delete(cartitem);
+		transaction.commit();
+		
+	}
+
+
+
+	
+		
+	}
 		
 	
 
 
-}
+

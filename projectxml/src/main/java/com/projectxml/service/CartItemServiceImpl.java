@@ -1,5 +1,7 @@
 package com.projectxml.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,25 @@ public class CartItemServiceImpl implements CartItemService{
 			
 			
 		}
+
+	@Override
+	public List<CartItem> ViewCartProducts(int cartId) {
+		// TODO Auto-generated method stub
+		return c.ViewCartProducts(cartId);
+	}
+
+	
+
+	@Override
+	public void deleteItem(CartItem cartitem) {
+		 c.deleteItem(cartitem);
 		
 	}
+
+	}
+
+	
+		
+	
 
 

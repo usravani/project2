@@ -70,14 +70,7 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping("/signUp")//this signIn and href signIn jsp page name shld match
-	public ModelAndView signUp()
-	{
-		Customer customer=new Customer();
-		System.out.println("signUp()method called");
-		
-		return new ModelAndView("signUp","customerObj" , customer);//this signIn and views signIn jsp name shld match //customerobj is key to know the value to pass values to the controller
-	}
+	
 	@RequestMapping("/login")
 	public String loginMethod()
 	{
@@ -121,22 +114,6 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping("/reg")//this signIn and href signIn jsp page name shld match
-	public ModelAndView signup(@Valid@ModelAttribute ("customerObj")Customer customer,BindingResult bindingResult)//it will push object directly into  d/b//@valid is for validation
-	{
-		System.out.println("Iam in register page");
-		if(bindingResult.hasErrors())
-		{
-			System.out.println("has errors");
-			System.out.println("binding result");
-			return new ModelAndView("signUp");
-		}
-		System.out.println("Username:"+customer.getUsername());
-		System.out.println("password:"+customer.getPassword());
-		service.addCustomer(customer);
-		System.out.println("done saving");
-		return new ModelAndView("login", "message","you are successfully registered");//this signUp and views signUp jsp name shld match //customerobj is key to know the value to pass values to the controller
-	}
 
 	
 }

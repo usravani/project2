@@ -21,7 +21,7 @@ Enter Name/Email ID: <input type="text"  ng-model="search">&nbsp&nbsp<span class
             <td>{{ resource.category}}</td>
             <td>{{ resource.price}}</td>
             <td><img src="resources/images/{{resource.itemId}}.jpg" style="width:100px;height:100px"></td>
-            <td><a href="deleteItem?id={{resource.itemId}}">Delete</a></td>
+            <td><a href="deleteItem?id={{resource.itemId}}" onclick ="return confirm('Are you sure you want to delete');">Delete</a></td>
             <td><a href="editItem?id={{resource.itemId}}">Edit</a>
             
              </tr>    

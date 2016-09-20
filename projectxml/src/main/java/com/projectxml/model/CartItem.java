@@ -1,13 +1,21 @@
 package com.projectxml.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.springframework.stereotype.Component;
 @Entity
-public class CartItem {
+@Component
+public class CartItem implements Serializable
+{
+	private static final long serialVersionUID = 1L;
 @Id@GeneratedValue
 	private int cartItemId;
 	private int quantity;
@@ -17,7 +25,16 @@ public class CartItem {
 	private double totalPrice;
 	@ManyToOne
 	@JoinColumn(name="cartId")
+	@JsonIgnore
 	private Cart cart;
+	private int imageid;
+	public int getImageid() {
+		return imageid;
+	}
+	public void setImageid(int imageid) {
+		this.imageid = imageid;
+	}
+
 	public int getCartItemId() {
 		return cartItemId;
 	}

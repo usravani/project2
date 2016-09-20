@@ -1,6 +1,10 @@
 package com.projectxml.model;
 
-public class UserOrder {
+import java.io.Serializable;
+
+public class UserOrder implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	private int orderId;
 	private Customer customer;
 	private Cart cart;

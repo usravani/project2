@@ -17,7 +17,24 @@ public class CustomerDaoImpl implements CustomerDao{
 
 	@Autowired
 		SessionFactory sessionfactory;
-		public void addCustomer(Customer customer) {
+	public Customer initFlow()
+	{
+		return new Customer();
+	}
+		public String addCustomer(Customer customer) {
+			String status="success";
+			if(customer.getUsername().isEmpty())
+			{
+				return "failure";//if username is empty it retunrs failure
+			}
+			if(customer.getPassword().isEmpty())
+			{
+				return "failure";//if password is empty it retunrs failure
+			}
+			if(customer.getEmailId().isEmpty())
+			{
+				return "failure";//if emailid is empty it retunrs failure
+			}
 			System.out.println("CustomerDaoImpl");
 			Session session= sessionfactory.getCurrentSession();
 			Transaction transaction=session.beginTransaction();
@@ -29,8 +46,10 @@ public class CustomerDaoImpl implements CustomerDao{
 			userRole.setUserId(customer.getCustomerId());
 		    session.save(userRole);
 			Cart cart=new Cart();
+			cart.setCustomer(customer);
 			customer.setCart(cart);//automatically it will assign cart to the customer by this stmt
 			transaction.commit();
+			return status;
 		}
 			public List<Customer> viewCustomer(){
 			Session session= sessionfactory.getCurrentSession();
@@ -44,7 +63,7 @@ public class CustomerDaoImpl implements CustomerDao{
 				Session session= sessionfactory.getCurrentSession();
 				Transaction transaction=session.beginTransaction();
 				System.out.println("name = "+name);
-				Customer customer = (Customer) session.createCriteria(Customer.class).add(Restrictions.like("username", name)).uniqueResult();
+				Customer customer = (Customer) session.createCriteria(Customer.class).add(Restrictions.like("username",name)).uniqueResult();
 				System.out.println("after getting customer = "+ customer);
 				return customer;
 			}

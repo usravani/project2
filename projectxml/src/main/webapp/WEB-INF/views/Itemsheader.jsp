@@ -37,7 +37,7 @@
           <li><a href="Mens?category=Mens">Mens</a></li>
 		  <li><a href="Mens?category=Womens">Womens</a></li>
 	  </ul>
-	  <li><a href="customerHome">View Cart</a>
+	  <li><a href="myStore">View Cart</a>
 	  <li><a href="logout"> <span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
 	  
     

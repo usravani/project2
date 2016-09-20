@@ -7,6 +7,8 @@ import com.projectxml.model.Customer;
 
 public interface CartItemService {
 public void addItems(CartItem cartitem);
+List<CartItem>ViewCartProducts(int cartId);
+public void deleteItem(CartItem cartitem);
 
 }
 

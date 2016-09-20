@@ -48,7 +48,7 @@ public class AdminController {
 		i.addItem(item);
 		MultipartFile itemimage = file;
 		System.out.println(itemimage);
-		Path path = Paths.get("H://niitsoftwares//saisirproject//projectxml//src//main//webapp//WEB-INF//resources//images//"+ item.getItemId() + ".jpg");
+		Path path = Paths.get("C://Users//Sravani//git//projectxml//src//main//webapp//WEB-INF//resources//images//"+ item.getItemId() + ".jpg");
 		if (itemimage != null && !itemimage.isEmpty()) {
 			try {
 				itemimage.transferTo(new File(path.toString()));
